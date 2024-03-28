@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" href="" />
+    <link rel="icon" href="img/" />
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -20,14 +20,14 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top fw-medium mb-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm fw-medium">
       <div class="container">
-        <a class="navbar-brand" href="#">Sneeks4u</a>
+        <img src="img/sneaks4u.png" alt="" class="navbar-brand" />
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto px-5">
+          <div class="navbar-nav ms-auto">
             <a class="nav-link active" href="#">
               <div class="icon-wrapper">
                 <i class="bi bi-house"></i>
@@ -43,7 +43,7 @@
 
             <a class="nav-link" href="#">
               <div class="icon-wrapper">
-                <i class="bi bi-cart me-1"></i>
+                <i class="bi bi-cart"></i>
                 <span class="icon-text">Keranjang</span>
               </div>
             </a>
@@ -51,52 +51,155 @@
             <a class="nav-link" href="#">
               <div class="icon-wrapper">
                 <i class="bi bi-bell"></i>
-                <span class="position-absolute top-49 start-150 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+                <!-- <span class="position-absolute top-49 start-150 translate-middle p-2 bg-danger border border-light rounded-circle"></span> -->
                 <span class="icon-text">Notifikasi</span>
               </div>
             </a>
+
+            <span class="mr-3 line">|</span>
+
+            <div class="d-flex button">
+              <button class="btn font-weight-bold mr-3">Masuk</button>
+              <button class="btn font-weight-bold text-white">Daftar</button>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <!-- Akhir Navbar -->
+    <!-- Akhir Navbar
 
     <!-- Banner -->
-    <section id="Banner">
-      <div style="height: 500px; background-color: #eaeaea" class="container-fluid">
-        <div class="row">
-          <div class="col"></div>
+    <div class="banner-container">
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 1" />
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 2" />
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 3" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+          <span class="prev-icon-wrapper"><i class="bi bi-arrow-left-circle-fill"></i></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+          <span class="next-icon-wrapper"><i class="bi bi-arrow-right-circle-fill"></i></span>
+        </button>
       </div>
-    </section>
+    </div>
+
     <!-- Akhir Banner -->
 
     <!-- Kategori -->
-    <section id="Kategori">
-      <div style="height: 400px; background-color: #ffffff" class="containter">
-        <div class="row text-center">
-          <div class="col-md-5 mx-3 mt-5 mb-3">
-            <h2 class="fs-3">Kategori Pilihan</h2>
+    <div id="Kategori">
+      <div class="container mb-5">
+        <div class="row mx-auto mb-3">
+          <div class="col">
+            <h3 class="fs-4 fw-bold">Kategori pilihan</h3>
           </div>
         </div>
-        <div class="row text-center justify-content-center">
+        <div class="row justify-content-center text-center">
           <div class="col-md-3">
-            <div style="background-color: #e9e9e9; max-width: 300px; height: 350px; margin: 0 auto" class="rounded text-light p-3"></div>
-            <p>Sepatu Pria</p>
+            <div id="sepatuPria" class="rounded-4 p-3"></div>
+            <h6 class="mt-3 fw-semibold">Sepatu Pria</h6>
           </div>
           <div class="col-md-3">
-            <div style="background-color: #e9e9e9; max-width: 300px; height: 350px; margin: 0 auto" class="rounded text-light p-3"></div>
-            <p>Sepatu Pria</p>
+            <div id="sepatuPria" class="rounded-4 p-3"></div>
+            <h6 class="mt-3 fw-semibold">Sepatu Wanita</h6>
           </div>
           <div class="col-md-3">
-            <div style="background-color: #e9e9e9; max-width: 300px; height: 350px; margin: 0 auto" class="rounded text-light p-3"></div>
-            <p>Sepatu Pria</p>
+            <div id="sepatuPria" class="rounded-4 p-3"></div>
+            <h6 class="mt-3 fw-semibold">Sepatu Anak</h6>
+          </div>
+          <div class="col-md-3">
+            <div id="sepatuPria" class="rounded-4 p-3"></div>
+            <h6 class="mt-3 fw-semibold">Sepatu Olahraga</h6>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <!-- Akhir Kategori -->
 
+    <!-- Promo -->
+    <div id="Promo">
+      <div class="container mb-5">
+        <div class="row mx-auto mb-3">
+          <div class="col">
+            <h3 class="fs-4 fw-bold">Promo minggu ini</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="img/Banner3.png" class="img-fluid" alt="Banner 1" style="width: 1300px; height: 350px" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="img/Banner3.png" class="img-fluid" alt="Banner 2" style="width: 1300px; height: 350px" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="img/Banner3.png" class="img-fluid" alt="Banner 3" style="width: 1300px; height: 350px" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Promo -->
+
+    <!-- Brand -->
+    <div id="Brand">
+      <div class="container">
+        <div class="row mx-auto mb-3">
+          <div class="col">
+            <h3 class="fs-4 fw-bold">Brand terlaris</h3>
+          </div>
+        </div>
+
+        <div class="horizontal-scroll">
+          <div class="scroll-section scroll-section-left">
+            <img src="img/brand-img-1.webp" width="200" alt="" />
+            <img src="img/brand-img-2.webp" width="200" alt="" />
+            <img src="img/brand-img-3.webp" width="200" alt="" />
+            <img src="img/brand-img-4.webp" width="200" alt="" />
+            <img src="img/brand-img-5.webp" width="200" alt="" />
+          </div>
+          <div class="scroll-section scroll-section-left" aria-hidden="true">
+            <img src="img/brand-img-1.webp" width="200" alt="" />
+            <img src="img/brand-img-2.webp" width="200" alt="" />
+            <img src="img/brand-img-3.webp" width="200" alt="" />
+            <img src="img/brand-img-4.webp" width="200" alt="" />
+            <img src="img/brand-img-5.webp" width="200" alt="" />
+          </div>
+          <div class="scroll-section scroll-section-right">
+            <img src="img/brand-img-6.webp" width="200" alt="" />
+            <img src="img/brand-img-7.webp" width="200" alt="" />
+            <img src="img/brand-img-8.webp" width="200" alt="" />
+            <img src="img/brand-img-9.webp" width="200" alt="" />
+            <img src="img/brand-img-10.webp" width="200" alt="" />
+          </div>
+          <div class="scroll-section scroll-section-right" aria-hidden="true">
+            <img src="img/brand-img-6.webp" width="200" alt="" />
+            <img src="img/brand-img-7.webp" width="200" alt="" />
+            <img src="img/brand-img-8.webp" width="200" alt="" />
+            <img src="img/brand-img-9.webp" width="200" alt="" />
+            <img src="img/brand-img-10.webp" width="200" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Brand -->
+
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
