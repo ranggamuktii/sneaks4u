@@ -10,7 +10,7 @@ body {
 }
 
 .navbar-brand{
-    width: 150px;
+    width: 140px;
 }
 
 .navbar-nav{
@@ -59,61 +59,61 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  max-height: 50vh;
   /* background-image: url(img/backgroundBanner.png); */
   background-size: cover;
   background-position: center;
-  /* margin-bottom: 50px; */
+  margin: 20px 0px;
 }
 
-  #hero-carousel {
-    width: 1300px;
+#hero-carousel {
+    max-width: 1300px;
     margin: auto;
-  }
+}
 
-  .carousel-inner {
-    border-radius: 30px;
+.carousel-inner {
+    border-radius: 20px;
     overflow: hidden; 
-  }
+}
   
-  .carousel-item {
+.carousel-item {
     border-radius: 30px;
-  }
+}
 
-  .c-item {
-    height: 350px;
-  }
+.c-item {
+    max-height: 350px;
+}
   
-  .c-img {
+.c-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
   
-  .prev-icon-wrapper,
-  .next-icon-wrapper {
+.prev-icon-wrapper,
+.next-icon-wrapper {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     padding: 5px 10px; 
-  }
+}
   
-  .prev-icon-wrapper i,
-  .next-icon-wrapper i {
+.prev-icon-wrapper i,
+.next-icon-wrapper i {
     color: #fff; 
     font-size: 24px; 
     cursor: pointer; 
-  }
+}
   
-  .prev-icon-wrapper {
+.prev-icon-wrapper {
     left: 50px; 
-  }
+}
   
-  .next-icon-wrapper {
+.next-icon-wrapper {
     right: 50px;
-  }
+}
 
 
 #Kategori .container {
@@ -144,53 +144,60 @@ body {
   border-radius: 20px;
 }
 
+#Brand {
+  display: grid;
+  place-items: center;
+}
 
-@media screen and (width > 458px) {
+.horizontal-scroll {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  justify-items: flex-start;
+  column-gap: var(--gap);
+}
+  
+.scroll-section {
+  gap: 90px;
+  margin-bottom: 30px;
+  min-width: 100vw;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+  animation: scroll 30s linear infinite;
+}
+  
+.scroll-section-left {
+  animation-direction: alternate;   
+}
+  
+.scroll-section-right {
+  animation-direction: alternate-reverse;
+}
+  
+@keyframes scroll {
+  to {
+    transform: translateX(calc(var(--calc-scroll-section-width) * -1));
+  }
+}
+
+@media screen and (width > 360px) {
   :root {
     --gap: 0px;
     --_scroll-section-width: 100vw;
     --calc-scroll-section-width: var(--_scroll-section-width);
   }
-}
 
-#Brand {
-    display: grid;
-    place-items: center;
-}
-
-.horizontal-scroll {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow: hidden;
-    justify-items: flex-start;
-    column-gap: var(--gap);
-}
-  
-.scroll-section {
-    gap: 110px;
-    margin-bottom: 30px;
-    min-width: 100vw;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-wrap: nowrap;
-    animation: scroll 30s linear infinite;
-}
-  
-.scroll-section-left {
-    animation-direction: alternate;   
-}
-  
-.scroll-section-right {
-    animation-direction: alternate-reverse;
-}
-  
-  @keyframes scroll {
-    to {
-      transform: translateX(calc(var(--calc-scroll-section-width) * -1));
-    }
+  .horizontal-scroll {
+    width: 100%; /* Ubah lebar menjadi 100% saat tampilan mobile */
   }
+  
+  .scroll-section {
+    min-width: 100%; /* Sesuaikan lebar minimum dengan lebar viewport */
+  }
+}
 
   
