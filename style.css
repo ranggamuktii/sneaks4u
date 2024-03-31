@@ -4,13 +4,80 @@
     /* border: 1px solid black; */
 }
 
-body {
-  height: 100vh;
-  width: 100vw;
+.menu-bar {
+  display: flex;
+  position: absolute;
+  right: 35px;
+  top: 91px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  border-radius: 12px;
+  visibility: hidden;
+  transition: 0.1s;
+  transform: rotateX(-75deg);
+  z-index: 999999;
+}
+
+.menuBarStyle {
+  visibility: visible;
+  transform: rotateX(0deg);
+  transform-origin: 0% 0%;
+}
+
+.menu-bar h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu-bar p {
+  font-size: 14px;
+  color: #31353bad;
+}
+
+.menu-bar .btn {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.menu-bar img {
+  width: 50%;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.overlayStyle {
+  display: block !important;
 }
 
 .navbar-brand{
     width: 140px;
+}
+
+.wrap-search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 10px;
 }
 
 .navbar-nav{
@@ -28,14 +95,14 @@ body {
     gap: 15px;
 }
 
-.navbar-nav .btn {
+.navbar-nav .login .btn {
     border-radius: 8px;
     font-size: 13px;
     background-color: #DC213E;
     align-self: center;
 }
 
-.navbar-nav .btn:first-child {
+.navbar-nav .login .btn:first-child {
     background-color: #ffffff;
     border: 1px solid #DC213E;
     color: #DC213E;
@@ -59,11 +126,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 50vh;
+  max-height: 80vh;
   /* background-image: url(img/backgroundBanner.png); */
   background-size: cover;
   background-position: center;
-  margin: 20px 0px;
+  margin: 20px 20px;
 }
 
 #hero-carousel {
@@ -81,7 +148,7 @@ body {
 }
 
 .c-item {
-    max-height: 350px;
+    max-height: 380px;
 }
   
 .c-img {
@@ -115,22 +182,31 @@ body {
     right: 50px;
 }
 
-
 #Kategori .container {
-    border-radius: 20px;
-    padding: 20px 10px 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
-    
+  width: 90%;
+  border-radius: 20px;
+  padding: 20px 10px 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 #sepatuPria, #sepatuWanita, #sepatuAnak, #sepatuOlahraga {
-  width: 280px;
-  height: 350px;
+  max-width: 250px;
+  height: 300px;
   margin: 0 auto;
   background-color: #eaeaea;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.card {
+  /* box-shadow  : rgba(49, 53, 59, 0.12) 0px 1px 6px 0px; */
+  border-radius: 90px;
+}
+
+.card-body {
+  padding: 10px;
 }
 
 #Promo .row {
@@ -144,10 +220,39 @@ body {
   border-radius: 20px;
 }
 
+
+/* Offers */
+#offers{
+  background: url(img/offer_img.png) center/cover no-repeat;
+}
+#offers .row{
+  min-height: 60vh;
+}
+.offers-content span{
+  font-size: 40px;
+  font-weight: 600;
+}
+.offers-content h2{
+  font-size: 68px;
+  font-weight: bold;
+  font-family: var(--lg-font);
+}
+.offers-content p{
+  font-size: 20px;
+  font-weight: 400;
+}
+/* Akhir Offers */
+
+
 #Brand {
   display: grid;
   place-items: center;
 }
+
+#Brand img {
+  filter: grayscale(100%); /* Mengubah gambar menjadi abu-abu */
+}
+
 
 .horizontal-scroll {
   width: 100%;
@@ -159,15 +264,15 @@ body {
 }
   
 .scroll-section {
-  gap: 90px;
+  gap: 100px;
   margin-bottom: 30px;
   min-width: 100vw;
   width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-wrap: nowrap;
-  animation: scroll 30s linear infinite;
+  /* text-wrap: nowrap; */
+  animation: scroll 20s linear infinite;
 }
   
 .scroll-section-left {
@@ -184,7 +289,7 @@ body {
   }
 }
 
-@media screen and (width > 360px) {
+@media screen and (width > 480px) {
   :root {
     --gap: 0px;
     --_scroll-section-width: 100vw;
@@ -199,5 +304,7 @@ body {
     min-width: 100%; /* Sesuaikan lebar minimum dengan lebar viewport */
   }
 }
+
+@me
 
   

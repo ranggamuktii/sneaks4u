@@ -19,14 +19,28 @@
     <title>Sneaks4u</title>
   </head>
   <body>
+    <div id="overlay"></div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm fw-medium">
       <div class="container">
         <img src="img/sneaks4u.png" alt="" class="navbar-brand" />
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="wrap-search">
+            <div class="input-group">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+              <input type="text" class="form-control" placeholder="Cari barang" data-toggle="modal" data-target="#exampleModal" />
+            </div>
+          </div>
           <div class="navbar-nav ms-auto">
             <a class="nav-link active" href="#">
               <div class="icon-wrapper">
@@ -42,7 +56,7 @@
             </a>
 
             <a class="nav-link" href="#">
-              <div class="icon-wrapper">
+              <div class="icon-wrapper" onclick="on()">
                 <i class="bi bi-cart"></i>
                 <span class="icon-text">Keranjang</span>
               </div>
@@ -51,22 +65,30 @@
             <a class="nav-link" href="#">
               <div class="icon-wrapper">
                 <i class="bi bi-bell"></i>
-                <!-- <span class="position-absolute top-49 start-150 translate-middle p-2 bg-danger border border-light rounded-circle"></span> -->
                 <span class="icon-text">Notifikasi</span>
               </div>
             </a>
 
             <span class="mr-3 line">|</span>
 
-            <div class="d-flex button">
-              <button class="btn font-weight-bold mr-3">Masuk</button>
+            <div class="d-flex button login">
+              <button class="btn font-weight-bold">Masuk</button>
               <button class="btn font-weight-bold text-white">Daftar</button>
             </div>
           </div>
         </div>
       </div>
+      <div class="menu-bar flex-column justify-content-between align-items-center" id="menuBar">
+        <img src="img/5.png" alt="Keranjang Kosong" />
+        <h4 class="mt-2">Wah keranjang belanjaanmu kosong</h4>
+        <p class="text-center">
+          Daripada dianggurin, mending diisi dengan barang barang <br />
+          impianmu. Yuk cek sekarang!
+        </p>
+        <button class="btn">Lihat Rekomendasi</button>
+      </div>
     </nav>
-    <!-- Akhir Navbar
+    <!-- Akhir Navbar -->
 
     <!-- Banner -->
     <div class="banner-container">
@@ -75,17 +97,21 @@
           <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
         </div>
 
         <div class="carousel-inner">
           <div class="carousel-item active c-item">
-            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 1" />
+            <img src="img/banner1.png" class="d-block w-100 c-img" alt="Slide 1" />
           </div>
           <div class="carousel-item c-item">
-            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 2" />
+            <img src="img/banner2.png" class="d-block w-100 c-img" alt="Slide 2" />
           </div>
           <div class="carousel-item c-item">
-            <img src="img/Banner3.png" class="d-block w-100 c-img" alt="Slide 3" />
+            <img src="img/banner3.png" class="d-block w-100 c-img" alt="Slide 3" />
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/banner4.png" class="d-block w-100 c-img" alt="Slide 4" />
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
@@ -101,33 +127,302 @@
 
     <!-- Kategori -->
     <div id="Kategori">
-      <div class="container mb-5">
-        <div class="row mx-auto mb-3">
+      <div class="container mt-0 mb-5">
+        <div class="row mx-auto mb-3 text-center">
           <div class="col">
             <h3 class="fs-4 fw-bold">Kategori pilihan</h3>
           </div>
         </div>
         <div class="row justify-content-center text-center">
-          <div class="col-md-3">
-            <div id="sepatuPria" class="rounded-4 p-3"></div>
+          <div class="col-6 col-md-3">
+            <div id="sepatuPria" class="rounded-4"></div>
             <h6 class="mt-3 fw-semibold">Sepatu Pria</h6>
           </div>
-          <div class="col-md-3">
-            <div id="sepatuPria" class="rounded-4 p-3"></div>
+          <div class="col-6 col-md-3">
+            <div id="sepatuWanita" class="rounded-4"></div>
             <h6 class="mt-3 fw-semibold">Sepatu Wanita</h6>
           </div>
-          <div class="col-md-3">
-            <div id="sepatuPria" class="rounded-4 p-3"></div>
+          <div class="col-6 col-md-3">
+            <div id="sepatuAnak" class="rounded-4"></div>
             <h6 class="mt-3 fw-semibold">Sepatu Anak</h6>
           </div>
-          <div class="col-md-3">
-            <div id="sepatuPria" class="rounded-4 p-3"></div>
+          <div class="col-6 col-md-3">
+            <div id="sepatuOlahraga" class="rounded-4"></div>
             <h6 class="mt-3 fw-semibold">Sepatu Olahraga</h6>
           </div>
         </div>
       </div>
     </div>
     <!-- Akhir Kategori -->
+
+    <!-- Pilihan Produk -->
+    <div id="Produk">
+      <div class="container mt-5 mb-5">
+        <div class="row mx-auto mb-3">
+          <div class="col">
+            <h3 class="fs-4 fw-bold">Pilihan produk</h3>
+          </div>
+        </div>
+        <div class="row mx-0 mt-0">
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mx-0">
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mx-0">
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 pl-0 mb-3">
+            <div class="card">
+              <img src="img/SepatuPria.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h6 class="card-title">Kaos Cowo trending</h6>
+                <div class="d-flex">
+                  <span class="badge badge-pill" style="background-color: #dc213e; color: d50000">47%</span>
+                  <span class="badge-pill badge" style="color: #989898"><del>Rp 75.000</del></span>
+                </div>
+                <h6 class="mt-1">Rp 40.000</h6>
+                <div class="d-flex align-items-center">
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <img class="mr-1" width="10" height="10" src="img/icon-bintang.png" alt="" />
+                  <span style="color: #989898">(14)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Promo -->
     <div id="Promo">
@@ -138,23 +433,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-md-6 mb-3">
             <div class="card-img">
-              <img src="img/Banner3.png" class="card-img" alt="..." />
+              <img src="img/banner3.png" class="card-img rounded-4" alt="..." />
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">
+          <div class="col-md-6 mb-3">
             <div class="card-img">
-              <img src="img/Banner3.png" class="card-img" alt="..." />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="card-img">
-              <img src="img/Banner3.png" class="card-img" alt="..." />
+              <img src="img/banner4.png" class="card-img rounded-4" alt="..." />
             </div>
           </div>
         </div>
@@ -162,62 +448,96 @@
     </div>
     <!-- Akhir Promo -->
 
+    <!-- Offer -->
+    <section id="offers" class="py-5 mb-5">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+          <div class="offers-content">
+            <span class="text-white">Discount Up To 40%</span>
+            <h2 class="mt-2 mb-4 text-white">Grand Sale Offer!</h2>
+            <p class="text-white">
+              Dengan minimal belanja Rp300.000, <br />
+              kamu bisa mendapatkan kupon ini
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Offer -->
+
     <!-- Brand -->
     <div id="Brand">
       <div class="container">
-        <div class="row mx-auto mb-3">
+        <div class="row mx-auto mb-5">
           <div class="col">
             <h3 class="fs-4 fw-bold">Brand terlaris</h3>
           </div>
         </div>
 
-        <div class="horizontal-scroll">
-          <div class="scroll-section scroll-section-left">
-            <img src="img/brand-img-1.webp" width="200" alt="" />
-            <img src="img/brand-img-2.webp" width="200" alt="" />
-            <img src="img/brand-img-3.webp" width="200" alt="" />
-            <img src="img/brand-img-4.webp" width="200" alt="" />
-            <img src="img/brand-img-5.webp" width="200" alt="" />
+        <div class="row horizontal-scroll">
+          <div class="col scroll-section scroll-section-left">
+            <img src="img/brand-img-1.png" width="100" alt="" />
+            <img src="img/brand-img-2.jpg" width="100" alt="" />
+            <img src="img/brand-img-3.png" width="100" alt="" />
+            <img src="img/brand-img-4.png" width="100" alt="" />
+            <img src="img/brand-img-5.png" width="100" alt="" />
+            <img src="img/brand-img-1.png" width="100" alt="" />
+            <img src="img/brand-img-2.jpg" width="100" alt="" />
+            <img src="img/brand-img-3.png" width="100" alt="" />
+            <img src="img/brand-img-4.png" width="100" alt="" />
+            <img src="img/brand-img-5.png" width="100" alt="" />
+            <img src="img/brand-img-1.png" width="100" alt="" />
+            <img src="img/brand-img-2.jpg" width="100" alt="" />
+            <img src="img/brand-img-3.png" width="100" alt="" />
+            <img src="img/brand-img-4.png" width="100" alt="" />
+            <img src="img/brand-img-5.png" width="100" alt="" />
           </div>
-          <div class="scroll-section scroll-section-left" aria-hidden="true">
-            <img src="img/brand-img-1.webp" width="200" alt="" />
-            <img src="img/brand-img-2.webp" width="200" alt="" />
-            <img src="img/brand-img-3.webp" width="200" alt="" />
-            <img src="img/brand-img-4.webp" width="200" alt="" />
-            <img src="img/brand-img-5.webp" width="200" alt="" />
-          </div>
-          <div class="scroll-section scroll-section-right">
-            <img src="img/brand-img-6.webp" width="200" alt="" />
-            <img src="img/brand-img-7.webp" width="200" alt="" />
-            <img src="img/brand-img-8.webp" width="200" alt="" />
-            <img src="img/brand-img-9.webp" width="200" alt="" />
-            <img src="img/brand-img-10.webp" width="200" alt="" />
-          </div>
-          <div class="scroll-section scroll-section-right" aria-hidden="true">
-            <img src="img/brand-img-6.webp" width="200" alt="" />
-            <img src="img/brand-img-7.webp" width="200" alt="" />
-            <img src="img/brand-img-8.webp" width="200" alt="" />
-            <img src="img/brand-img-9.webp" width="200" alt="" />
-            <img src="img/brand-img-10.webp" width="200" alt="" />
+        </div>
+        <div class="row horizontal-scroll">
+          <div class="col scroll-section scroll-section-right">
+            <img src="img/brand-img-6.png" width="100" alt="" />
+            <img src="img/brand-img-7.png" width="100" alt="" />
+            <img src="img/brand-img-8.png" width="100" alt="" />
+            <img src="img/brand-img-9.png" width="100" alt="" />
+            <img src="img/brand-img-10.png" width="100" alt="" />
+            <img src="img/brand-img-6.png" width="100" alt="" />
+            <img src="img/brand-img-7.png" width="100" alt="" />
+            <img src="img/brand-img-8.png" width="100" alt="" />
+            <img src="img/brand-img-9.png" width="100" alt="" />
+            <img src="img/brand-img-10.png" width="100" alt="" />
+            <img src="img/brand-img-6.png" width="100" alt="" />
+            <img src="img/brand-img-7.png" width="100" alt="" />
+            <img src="img/brand-img-8.png" width="100" alt="" />
+            <img src="img/brand-img-9.png" width="100" alt="" />
+            <img src="img/brand-img-10.png" width="100" alt="" />
           </div>
         </div>
       </div>
     </div>
     <!-- Akhir Brand -->
 
-    <!-- Ekslusif -->
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col custom-box">
-          <img src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?fit=crop&w=2134&q=100" class="d-block w-100" alt="Slide 2" />
-        </div>
-        <div class="col custom-box bg-white">
-          <!-- Content for Box 2 -->
+    <!-- footer -->
+    <footer class="bg-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="img/Profile2.jpg" alt="Foto Profil" class="img-thumbnail rounded-circle" />
+          </div>
+          <div class="col-md-9">
+            <h2>Eki Ramadhan</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium nisl. Donec et lectus eu leo tincidunt ultricies.</p>
+            <ul class="list-inline">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Akhir Ekslusif -->
+    </footer>
+    <!-- end of footer -->
 
+    <script src="js/jquery-3.6.0.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
