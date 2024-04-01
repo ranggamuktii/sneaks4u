@@ -4,10 +4,6 @@
     /* border: 1px solid black; */
 }
 
-body {
-  width: 100vw;
-}
-
 .menu-bar {
   display: flex;
   position: absolute;
@@ -32,20 +28,23 @@ body {
 }
 
 .menu-bar h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .menu-bar p {
   font-size: 14px;
+  font-weight: 500;
   color: #31353bad;
 }
 
 .menu-bar .btn {
   color: #ffffff;
-  font-size: 20px;
+  background-color: #DC213E;
+  font-size: 15px;
   font-weight: bold;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .menu-bar img {
