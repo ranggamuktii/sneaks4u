@@ -1,0 +1,156 @@
+* {
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.navbar-brand{
+    width: 140px;
+}
+
+.wrap-search-luar {
+  display: none;
+}
+
+.wrap-search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.navbar-nav{
+    gap: 20px;
+}
+
+.line {
+  font-size: 38px;
+  color: #cdcdcd;
+  margin-bottom: 0px;
+  font-weight: 100;
+}
+
+.button {
+    gap: 15px;
+}
+
+.navbar-nav .login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .login .btn {
+    border-radius: 8px;
+    font-size: 13px;
+    background-color: #DC213E;
+    align-self: center;
+}
+
+.navbar-nav .login .btn:first-child {
+    background-color: #ffffff;
+    border: 1px solid #DC213E;
+    color: #DC213E;
+    align-self: center;
+}
+  
+.icon-wrapper {
+    text-align: center;
+  }
+  
+.icon-wrapper .bi {
+    font-size: 1.1rem;
+}
+  
+.icon-text {
+    font-size: 0.8rem;
+    display: block;
+}
+
+#Keranjang .title h3 {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+#Keranjang .table-product {
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+}
+
+#Keranjang .table-product p {
+    margin: auto 0px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+#cart-list {
+    /* margin-top: 15px; */
+}
+
+.list-group .list-group-item {
+    padding: 30px;
+    border: none;
+    
+}
+
+.list-group .list-group-item img{
+    border-radius: 15px;
+    width: 100px;
+}
+
+.list-group .list-group-item  p {
+    margin: auto 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.list-group .list-group-item button {
+    background-color: #f0f3f7;
+    padding: 1px 4px;
+}
+
+#ringkasan-belanja {
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+    margin-top: 15px;
+    padding: 5px 25px 25px 25px;
+    box-sizing: border-box;
+}
+
+#ringkasan-belanja h3 {
+    margin: auto 0px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+#ringkasan-belanja p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#ringkasan-belanja .btn-checkout {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #DC213E;
+    align-self: center;
+}
+
+.footer-line {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  
+  footer p {
+    color: #bdbdbd;
+    font-size: 15px;
+    font-weight: 500;
+  }
