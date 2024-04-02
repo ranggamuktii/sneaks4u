@@ -37,17 +37,15 @@ function showAddedToCartPopup(productName, item) {
       <span class="close-popup">&times;</span>
       <div class="row align-items-center">
         <div class="col-md-2">
-          <img src="${item.image}" alt="${item.name}" style="width:100px;">
+          <img src="${item.image}" alt="${item.name}" style="max-width:60px; border-radius:15px;">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <p>${item.name}</p>
         </div>
         <div class="col-md-2">
           <p>${formatRupiah(item.price)}</p>
         </div>
-        <div class="col-md-2">
-          <span class="mx-2">${item.quantity}</span>
-        </div>
+        
       </div>
     </div>
   `;
